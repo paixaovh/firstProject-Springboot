@@ -95,6 +95,14 @@ public class Order implements Serializable {
         return items;
     }
 
+    public double getTotal(){
+        double sum = 0.0;
+        for (OrderItem x : items){
+            sum += x.getsubTotal();
+        }
+        return sum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Order order)) return false;
